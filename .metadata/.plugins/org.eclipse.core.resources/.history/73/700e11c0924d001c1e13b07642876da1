@@ -1,0 +1,12 @@
+package com.in.modifers;
+
+import com.in.access.Addition;
+
+public class Summation extends Addition {
+
+	public void display() {
+		Addition addition = new Addition();
+		addition.add();
+		addition.
+	}
+}

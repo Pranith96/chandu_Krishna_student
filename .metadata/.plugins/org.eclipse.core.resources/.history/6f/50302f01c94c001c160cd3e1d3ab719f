@@ -1,0 +1,48 @@
+
+public class StringExample1 {
+
+	public static void main(String[] args) {
+
+		String s = "Hi"; // String laterals
+		String s1 = new String("Hi"); // Heap
+		String s2 = "Hi";
+		String s3 = "hi";
+
+		// == reference check
+		if (s == s1) {
+			System.out.println("true");
+		} else {
+			System.out.println("false");
+		}
+
+		if (s == s2) {
+			System.out.println("true");
+		} else {
+			System.out.println("false");
+		}
+
+		// .equals() data check
+		if (s.equals(s1)) {
+			System.out.println("true");
+		} else {
+			System.out.println("false");
+		}
+
+		// .equalsignorecase() data check with no case
+		if (s.equalsIgnoreCase(s3)) {
+			System.out.println("true");
+		} else {
+			System.out.println("false");
+		}
+
+		if (s.contains(s1)) {
+			System.out.println("true");
+		} else {
+			System.out.println("false");
+		}
+		
+		
+		s3.concat("welcome");
+	}
+
+}
