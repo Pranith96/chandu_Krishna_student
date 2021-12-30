@@ -1,8 +1,0 @@
-package com.in.access;
-
-public class Addition {
-	
-	public void add() {
-		System.out.println("Addition");
-	}
-}

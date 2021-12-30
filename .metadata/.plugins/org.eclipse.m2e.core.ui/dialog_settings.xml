@@ -2,6 +2,7 @@
 <section name="Workbench">
 	<section name="MavenProjectImportWizardPage">
 		<list key="rootDirectory">
+			<item value="C:\Users\ramannpr\support_works\chandu-java-springboot\chandu-studentapplication"/>
 			<item value="C:\Users\ramannpr\Support_tasks\bank-application"/>
 			<item value="C:\Users\ramannpr\support_works\chandu-java-springboot\springboot projects\employee-application"/>
 			<item value="C:\Users\ramannpr\support_works\chandu-java-springboot\springboot projects\dailyactivity-service"/>
