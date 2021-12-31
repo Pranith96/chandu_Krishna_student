@@ -18,6 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.student.entity.Student;
 import com.student.service.StudentService;
 
+import io.swagger.annotations.ApiOperation;
+
 @RestController
 @RequestMapping("/student")
 public class StudentController {
@@ -26,18 +28,27 @@ public class StudentController {
 	StudentService studentService;
 
 	@PostMapping("/add")
+	@ApiOperation(value = "Student account Creation API",
+    notes = "Please provide all the info for Student account creation",
+    response = Student.class)
 	public ResponseEntity<String> addStudent(@RequestBody Student student) {
 		String response = studentService.addStudent(student);
 		return ResponseEntity.status(HttpStatus.CREATED).body(response);
 	}
 
 	@GetMapping("/get/all")
+	@ApiOperation(value = "Students Details fetch API",
+    notes = "All the student details will be fetched",
+    response = Student.class)
 	public ResponseEntity<List<Student>> getStudents() {
 		List<Student> response = studentService.getAllStudents();
 		return ResponseEntity.status(HttpStatus.OK).body(response);
 	}
 
 	@GetMapping("/get/{studentId}")
+	@ApiOperation(value = "Students Details fetch API",
+    notes = "Please provide all the info for fetching student details",
+    response = Student.class)
 	public ResponseEntity<Student> getStudentById(@PathVariable("studentId") Integer studentId) {
 		Student response = studentService.getStudentById(studentId);
 		return ResponseEntity.status(HttpStatus.OK).body(response);

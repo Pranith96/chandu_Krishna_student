@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
 import com.student.entity.Student;
@@ -11,6 +12,7 @@ import com.student.exception.StudentNotFoundException;
 import com.student.repository.StudentRepository;
 
 @Service
+@Profile(value = { "local", "dev", "prod", "qa" })
 public class StudentServiceImpl implements StudentService {
 
 	@Autowired
@@ -18,6 +20,7 @@ public class StudentServiceImpl implements StudentService {
 
 	@Override
 	public String addStudent(Student student) {
+		student.getAddress().setStudent(student);
 		Student studentResponse = studentRepository.save(student);
 		if (studentResponse == null) {
 			return "data not saved";
